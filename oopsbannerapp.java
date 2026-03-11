@@ -1,7 +1,8 @@
 public class oopsbannerapp {
 
-    static String[] O() {
-        return new String[]{
+    public static void main(String[] args) {
+
+        CharacterPattern O = new CharacterPattern('O', new String[]{
             " ***** ",
             "*     *",
             "*     *",
@@ -9,11 +10,9 @@ public class oopsbannerapp {
             "*     *",
             "*     *",
             " ***** "
-        };
-    }
+        });
 
-    static String[] P() {
-        return new String[]{
+        CharacterPattern P = new CharacterPattern('P', new String[]{
             "****** ",
             "*     *",
             "*     *",
@@ -21,11 +20,9 @@ public class oopsbannerapp {
             "*      ",
             "*      ",
             "*      "
-        };
-    }
+        });
 
-    static String[] S() {
-        return new String[]{
+        CharacterPattern S = new CharacterPattern('S', new String[]{
             " ******",
             "*      ",
             "*      ",
@@ -33,18 +30,15 @@ public class oopsbannerapp {
             "      *",
             "      *",
             "****** "
-        };
-    }
+        });
 
-    public static void main(String[] args) {
-
-        String[] o1 = O();
-        String[] o2 = O();
-        String[] p  = P();
-        String[] s  = S();
+        String[] o1 = O.getPattern();
+        String[] o2 = O.getPattern();
+        String[] p  = P.getPattern();
+        String[] s  = S.getPattern();
 
         for(int i = 0; i < 7; i++) {
             System.out.println(o1[i] + "  " + o2[i] + "  " + p[i] + "  " + s[i]);
         }
     }
-}
+} 
