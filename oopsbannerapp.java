@@ -1,8 +1,12 @@
+import java.util.HashMap;
+
 public class oopsbannerapp {
 
     public static void main(String[] args) {
 
-        CharacterPattern O = new CharacterPattern('O', new String[]{
+        HashMap<Character, String[]> map = new HashMap<>();
+
+        map.put('O', new String[]{
             " ***** ",
             "*     *",
             "*     *",
@@ -12,7 +16,7 @@ public class oopsbannerapp {
             " ***** "
         });
 
-        CharacterPattern P = new CharacterPattern('P', new String[]{
+        map.put('P', new String[]{
             "****** ",
             "*     *",
             "*     *",
@@ -22,7 +26,7 @@ public class oopsbannerapp {
             "*      "
         });
 
-        CharacterPattern S = new CharacterPattern('S', new String[]{
+        map.put('S', new String[]{
             " ******",
             "*      ",
             "*      ",
@@ -32,13 +36,14 @@ public class oopsbannerapp {
             "****** "
         });
 
-        String[] o1 = O.getPattern();
-        String[] o2 = O.getPattern();
-        String[] p  = P.getPattern();
-        String[] s  = S.getPattern();
+        String word = "OOPS";
 
         for(int i = 0; i < 7; i++) {
-            System.out.println(o1[i] + "  " + o2[i] + "  " + p[i] + "  " + s[i]);
+            for(int j = 0; j < word.length(); j++) {
+                char ch = word.charAt(j);
+                System.out.print(map.get(ch)[i] + "  ");
+            }
+            System.out.println();
         }
     }
-} 
+}
